@@ -3,9 +3,10 @@ import { useHistory, useParams } from "react-router-dom";
 const BlogDetails = () => {
   const {id} = useParams();
   const history = useHistory();
+  const url = `http://localhost:8000/blogs/${id}`
 
   const handleClick = () => {
-    fetch(`http://localhost:8000/blogs/${id}`, {
+    fetch(url, {
       method: 'DELETE'
     }).then(() => {
       history.push('/');
