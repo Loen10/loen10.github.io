@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useHistory } from 'react-router-dom';
 
 const Create = () => {
@@ -8,7 +8,7 @@ const Create = () => {
   const [isPending, setIsPending] = useState(false);
   const history = useHistory();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsPending(true);
 
@@ -38,7 +38,7 @@ const Create = () => {
         ></input>
         <label>Blog Body:</label>
         <textarea
-          type="text"
+          typeof="text"
           required
           value={body}
           onChange={(e) => setBody(e.target.value)}
